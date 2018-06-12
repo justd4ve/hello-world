@@ -1,1 +1,16 @@
-# hello-world
+# Zprovoznění
+- Import souboru dump.sql do databáze
+- Backend
+  - Stažení závislostí příkazem `composer install` v adresáři `/backend`
+  - Upload složky na server
+  - upravit rewrite v souboru .htaccess na cestu k adresáři /backend
+  - úprava připojení k db v souboru backend/.env
+  - povolení zápisu do složky 'logs'
+- Frontend
+  - Instalace závislostí příkazem `npm install` v adresáři `/frontend`
+  - V souboru `/frontend/src/main.js` nastavit společnou část cesty k backendu.
+  - Frontend spustit příkazem `npm run dev` v adresáři `frontend`
+    - spustí se na http://localhost:8080
+	- alternativně možnost buildu aplikace příkazem `npm run build`
+	- složku dist umístit na server
+	- pozn. k buildu: cesty k obrázkům jsou v css definovány absolutně, po buildu je třeba je upravit v adresáři `\dist\static\css` v souboru s příponou .css na relativní (`../img/en.png`); dále je třeba změnit ve složce dist odkazy na skripty a styly z `/static` na `./static`
